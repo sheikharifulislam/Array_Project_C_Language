@@ -9,7 +9,7 @@ int main() {
     int data[MAX_LENGTH];
     int length = 0;
     int input;
-    int value;
+    int value,index;
 
     do {
         printf("Menu: \n");
@@ -51,6 +51,17 @@ int main() {
             break;
 
         case 2:
+            // insert operation
+            printf("Please Enter A Interget Value: ");
+            scanf("%d",&value);
+            printf("Please Enter an Index Between 0 -%d: ",length);
+            scanf("%d",&index);
+            for(int i = length; i > index; i--) {
+                data[i] = data[i - 1];
+            }
+            data[index] = value;
+            length++;
+            printf("%d insert index %d",value,index);
             break;
 
         case 3:
